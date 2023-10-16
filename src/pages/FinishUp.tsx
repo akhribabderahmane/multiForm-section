@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PageHead from "../components/PageHead";
 import { Link } from "react-router-dom";
-import { DevTool } from "@hookform/devtools";
 interface FinishUpProps {
   setSelectedStep: (step: number) => void;
 }

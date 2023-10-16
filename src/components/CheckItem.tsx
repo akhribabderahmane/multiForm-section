@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import ChecksBox from "./tinyComponents/ChecksBox";
 import {
   UseFormGetValues,
   UseFormSetValue,
-  UseFormWatch,
 } from "react-hook-form";
 type FormValues = {
   services: {
@@ -18,13 +17,11 @@ interface CheckItemProps {
   price: number;
   setValue: UseFormSetValue<FormValues>;
   getValues: UseFormGetValues<FormValues>;
-  watch: UseFormWatch<FormValues>;
 }
 
 const CheckItem: React.FC<CheckItemProps> = ({
   setValue,
   getValues,
-  watch,
   title,
   description,
   price,

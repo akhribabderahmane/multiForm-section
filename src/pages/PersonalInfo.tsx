@@ -1,8 +1,6 @@
 import PageHead from "../components/PageHead";
-import { DevTool } from "@hookform/devtools";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import * as React from "react";
 import { useState,useEffect } from "react";
 
 interface PersonalInfoProps {
@@ -22,7 +20,7 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ setSelectedStep }) => {
     },
     mode: "onChange",
   });
-  const { register, control, formState, handleSubmit } = form;
+  const { register, formState, handleSubmit } = form;
   const { errors, isValid } = formState;
   const onSubmit = (data: FormValues) => {
     console.log("form submitted", data);
@@ -169,7 +167,6 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ setSelectedStep }) => {
           </div>
         </form>
       </div>
-      <DevTool control={control} />
     </div>
   );
 };

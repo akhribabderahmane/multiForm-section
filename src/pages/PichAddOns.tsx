@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import PageHead from "../components/PageHead";
 import CheckItem from "../components/CheckItem";
 import { useForm } from "react-hook-form";
-import { DevTool } from "@hookform/devtools";
 import { useEffect } from "react";
 interface PickAddsOnProps {
   setSelectedStep: (step: number) => void;
@@ -24,12 +23,9 @@ const PichAddOns:React.FC<PickAddsOnProps> = ({setSelectedStep}) => {
   });
   const {
     register,
-    control,
-    formState,
     handleSubmit,
     setValue,
     getValues,
-    watch,
   } = form;
   useEffect(()=>{
     setSelectedStep(3)
@@ -49,7 +45,6 @@ const PichAddOns:React.FC<PickAddsOnProps> = ({setSelectedStep}) => {
             <CheckItem
               setValue={setValue}
               getValues={getValues}
-              watch={watch}
               title={"Online service"}
               description={"Access to multiplayer games"}
               price={1}
@@ -57,7 +52,6 @@ const PichAddOns:React.FC<PickAddsOnProps> = ({setSelectedStep}) => {
              <CheckItem
               setValue={setValue}
               getValues={getValues}
-              watch={watch}
               title={"Larger storage"}
               description={"Extra 1TB of cloud save"}
               price={2}
@@ -65,7 +59,6 @@ const PichAddOns:React.FC<PickAddsOnProps> = ({setSelectedStep}) => {
              <CheckItem
               setValue={setValue}
               getValues={getValues}
-              watch={watch}
               title={"Customizable Profile"}
               description={"Custom theme on your profile"}
               price={1}
@@ -91,7 +84,7 @@ const PichAddOns:React.FC<PickAddsOnProps> = ({setSelectedStep}) => {
           </div>
         </form>
       </div>
-      <DevTool control={control} />
+
     </div>
   );
 };

@@ -2,7 +2,6 @@ import PageHead from "../components/PageHead";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import PlanBox from "../components/PlanBox";
-import { DevTool } from "@hookform/devtools";
 import { useEffect, useState } from "react";
 import SwitchsBox from "../components/tinyComponents/switchsBox";
 
@@ -84,8 +83,6 @@ const SelectPlan:React.FC<SelectPlanInfoProps> = ({setSelectedStep}) => {
   });
   const {
     register,
-    control,
-    // formState,
     handleSubmit,
     setValue,
     getValues,
@@ -176,7 +173,6 @@ const SelectPlan:React.FC<SelectPlanInfoProps> = ({setSelectedStep}) => {
           </div>
         </form>
       </div>
-      <DevTool control={control} />
     </div>
   );
 };
